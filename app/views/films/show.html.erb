@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h2><%= @film.titre %> (<%= @film.annee %>)</h2>
+
+<p>
+  Statut :
+  <% if @film.vu %>
+    Vu
+  <% else %>
+    Non vu
+  <% end %>
+</p>
+
+<%= link_to "Modifier", edit_film_path(@film) %> |
+<%= link_to "Retour à la liste", films_path %>

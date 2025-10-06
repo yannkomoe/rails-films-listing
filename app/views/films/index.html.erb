@@ -1,0 +1,21 @@
+<h1>Mes Films</h1>
+
+<%= link_to "Tous Les Films", films_path %> | <%= link_to "Films Déjà Vus", films_path(filter: "vus") %> | <%= link_to "Films Non vus", films_path(filter: "non_vus") %>
+
+</br><div id="films">
+  <% @films.each do |film| %>
+    <li>
+      </br><strong><%= film.titre %></strong>
+      <%= film.annee %>
+      <% if film.vu %> 
+        Vu 
+      <% else %> 
+        Non vu 
+      <% end %>
+      </br><%= link_to "Details", film %>
+    </li>
+
+  <% end %>
+</div>
+
+</br><%= link_to "Ajouter Un Film", new_film_path %>
